@@ -1,0 +1,7 @@
+n = int(input("enter a number"))
+def even_sum(n):
+ a,d=2,2
+ sum= (n/2)*(2*a+(n-1)*d)
+ return(sum)
+Asum=even_sum(n)
+print(Asum)
