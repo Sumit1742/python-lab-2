@@ -1,0 +1,8 @@
+n=[[1,2,3],[4,6,7],[3,6,7]]
+m=[[5,6,7],[9,7,5],[3,5,6]]
+result=[[0,0,0],[0,0,0],[0,0,0]]
+for i in range (len(n)):
+    for j in range(len(n[0])):
+        result[i][j]=n[i][j]+m[i][j]
+for r in result:
+    print(r)
