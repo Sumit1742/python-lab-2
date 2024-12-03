@@ -1,0 +1,77 @@
+import random
+from math import gcd
+
+# Function to generate a random prime number within a given range
+def is_prime(num):
+    if num < 2:
+        return False
+    for i in range(2, int(num ** 0.5) + 1):
+        if num % i == 0:
+            return False
+    return True
+
+def generate_prime(start=100, end=1000):
+    while True:
+        num = random.randint(start, end)
+        if is_prime(num):
+            return num
+
+# Function to compute the modular inverse
+def mod_inverse(a, m):
+    for x in range(1, m):
+        if (a * x) % m == 1:
+            return x
+    return None
+
+# Key generation
+def generate_keys():
+    # Choose two large primes
+    p = generate_prime()
+    q = generate_prime()
+    
+    # Calculate n = p * q
+    n = p * q
+    
+    # Calculate phi(n) = (p - 1) * (q - 1)
+    phi_n = (p - 1) * (q - 1)
+    
+    # Choose e such that 1 < e < phi(n) and gcd(e, phi(n)) = 1
+    e = random.randint(2, phi_n)
+    while gcd(e, phi_n) != 1:
+        e = random.randint(2, phi_n)
+    
+    # Calculate d such that (e * d) % phi(n) = 1
+    d = mod_inverse(e, phi_n)
+    
+    # Public key is (e, n) and private key is (d, n)
+    return (e, n), (d, n)
+
+# Encrypt function
+def encrypt(message, public_key):
+    e, n = public_key
+    # Convert each character to its ASCII value and encrypt it
+    encrypted_message = [pow(ord(char), e, n) for char in message]
+    return encrypted_message
+
+# Decrypt function
+def decrypt(encrypted_message, private_key):
+    d, n = private_key
+    # Decrypt the message using the private key
+    decrypted_message = ''.join(chr(pow(char, d, n)) for char in encrypted_message)
+    return decrypted_message
+
+# Example usage
+public_key, private_key = generate_keys()
+print("Public Key:", public_key)
+print("Private Key:", private_key)
+
+message = "Hello RSA!"
+print("Original Message:", message)
+
+# Encrypt the message
+encrypted_message = encrypt(message, public_key)
+print("Encrypted Message:", encrypted_message)
+
+# Decrypt the message
+decrypted_message = decrypt(encrypted_message, private_key)
+print("Decrypted Message:", decrypted_message)
