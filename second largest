@@ -1,0 +1,14 @@
+
+# list=[1,42,91,17,90]
+# max=0
+
+# for i in  range(0,len(list)):
+#     if list[i]>max:
+#         max=list[i]
+# print(max)
+# k=list.sort()
+# print(k)
+l=[100,420,9185,17,90]
+l.sort()
+n=len(l)-2
+print(l[n])
