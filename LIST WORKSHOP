@@ -1,0 +1,90 @@
+#**1
+# list1=[ 1,2,3,4,5,6]
+# for list in list1:
+#     if list==5:   
+#      break
+#     print(list)
+
+
+#**2
+# list1=[1,2,3,4,5,6,7,8,9]
+# for list in list1:
+#     if list==3:
+#         continue
+#     print(list)
+    
+
+#**3
+# list1=[1,2,3,4,5,6,7,8,9]
+# for list in list1:
+#     if list==7:
+#         break
+#     print(list)
+    
+
+
+#**4
+# list1=[1,2,3,4,5,6,7,8,9]
+# for list in list1:
+#     if list%2 !=0:
+#      print(list)
+
+
+
+#**5
+# list1=[1,2,3,4,5,6,7,8,9,10]
+# total=0
+# for list in list1:
+#     if list<-1:
+#         break
+#     total+=list
+# print(total)
+
+
+#**6
+# list1=[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]
+# for list in list1:
+#     if list<=10:
+#         continue
+#     print(list)
+
+
+#**7
+# list1=[1,2,3,4,5,6,7,8,9,10,15,50]
+# for list in list1:
+#     if list%5 == 0:
+#         print(list)
+#         break
+        
+        
+        
+#**8
+# list1=['ritik','roshan','asshvin']
+# for i in list1:
+#     if 'a'in i:
+#         continue
+#     print(i)
+                
+                
+#**9
+# list1=[1,2,-5,48,79,56]
+# for i in list1:
+#     if i>1:
+#         print(i)  
+#         continue         
+
+
+#**10
+# list1=['ash','name','john','kalu','madan']
+# for list in list1:
+#     if'john'in list:
+#         break
+#     print(list)
+        
+
+
+#**11
+list1=[1,2,5,4,6,8,4,20,55,41,21,0,12]
+for list in list1:
+    if list%2 ==0:
+        print(list)        
